@@ -11,7 +11,7 @@ app = Flask(__name__)
 sslify = SSLify(app)
 
 
-TOKEN = '677329060:AAEmvnJgXsQisyJ4ER7Imosjam0_Xu1lyys'
+TOKEN = 'API_TOKEN'
 URL = 'https://api.telegram.org/bot{}/'.format(TOKEN)
 
 
@@ -51,8 +51,7 @@ def index():
         if re.search(pattern, message):
             price = get_price(parse_text(message))
             send_message(chat_id, text=price)
-
-        # write_json(r)
+            
         return jsonify(r)
     return '<h1>Empire Welcomes You</h1>'
 
